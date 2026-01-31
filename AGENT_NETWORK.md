@@ -177,11 +177,11 @@ Focus on:
 
 **Script:** `/workspace/scripts/agent-research.sh`
 
-**Run Frequency:** Every 6 hours (agent time, not scheduled)
-- Morning research (global perspective)
-- Afternoon check (US activity)
-- Evening sweep (EU/Asia)
-- Night monitoring (continuous)
+**Run Frequency:** Every 2 hours (agent time, not scheduled)
+- Continuous monitoring (things move fast)
+- Multiple checks per cycle (global, all timezones)
+- Real-time discovery
+- Immediate response to critical developments
 
 **Output:** `/workspace/research/agent-research-TIMESTAMP.md`
 **Latest:** `/workspace/research/latest.md` (symlink)
