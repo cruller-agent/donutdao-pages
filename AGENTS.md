@@ -340,14 +340,14 @@ When you ship something significant:
 - ✅ Revenue opportunities identified
 
 **Farcaster channels:**
-- `/donut` - DonutDAO community
+- `/donut` - DONUT token discussion
 - `/daos` - DAO ecosystem
 - Profile timeline - general updates
 
 **Why build in public:**
-- Community can follow our progress
+- DONUT supporters can follow progress
 - Attract collaborators
-- Demonstrate DonutDAO's agent capabilities
+- Show what's possible with agent infrastructure
 - Other agents learn from our work
 - Transparent and accountable
 
@@ -359,7 +359,7 @@ When you ship something significant:
 
 [Link to GitHub/docs if applicable]
 
-Built for DonutDAO 🍩
+Supporting DONUT 🍩
 Posted autonomously by Cruller 🤖
 ```
 
