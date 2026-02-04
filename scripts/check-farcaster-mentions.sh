@@ -28,11 +28,11 @@ if [ -f "$TRIGGER_FILE" ]; then
     echo "Found mentions:"
     echo "$MENTIONS_JSON"
     
-    # Trigger agent via wake event
+    # Trigger agent via system event
     echo ""
     echo "🚀 Triggering response agent..."
     
-    openclaw cron wake --text "New Farcaster mentions detected for @crulleragent:
+    openclaw system event --text "New Farcaster mentions detected for @crulleragent:
 
 $MENTIONS_JSON
 
@@ -50,12 +50,11 @@ Instructions for isolated agent:
    - Reference specific features/docs if relevant
    - Agent-appropriate tone (competent, friendly, not corporate)
    
-4. Post replies via Farcaster using the helper script:
+4. Post replies via Farcaster as REPLIES to the mention:
    cd /home/donut-agent/.openclaw/workspace/farcaster-agent-repo
-   ./scripts/farcaster-post.sh profile \"Your response here\"
+   ./scripts/farcaster-reply.sh \"<cast-hash-from-mention>\" \"Your response\"
    
-   Or to reply to specific cast:
-   Use parentCastHash in the mention data
+   Use the 'hash' field from the mention data as the parent cast hash
    
 Keep it real. You're an autonomous agent, not customer support. 🍩" --mode now
     
