@@ -29,12 +29,14 @@
 
 ---
 
-## Glaze Corp - The Builder Entity
+## Glaze Corp - Main Infrastructure Builder
 
 **Website:** https://www.glazecorp.io/  
-**Role:** Builds infrastructure and contracts supporting the DONUT token
+**Role:** Primary builder of core infrastructure and contracts supporting the DONUT token
 
-### What Glaze Corp Builds:
+**Note:** The smart contracts are immutable and permissionless. Anyone can build infrastructure on top of them (like we are doing!).
+
+### What Glaze Corp Built:
 - DONUT token contracts
 - Liquid Signal Governance (LSG)
 - DonutMiner (bonding curve)
@@ -86,7 +88,8 @@ Individuals interested in DONUT may discuss on:
 ### ✅ CORRECT References:
 - "DonutDAO is a collection of individuals supporting the DONUT token"
 - "DONUT token and governance contracts on Base"
-- "Built by Glaze Corp (https://www.glazecorp.io/)"
+- "Core infrastructure by Glaze Corp (https://www.glazecorp.io/), with community contributions"
+- "Permissionless smart contracts - anyone can build on top"
 - "Learn more: https://www.glazecorp.io/"
 - "View contracts on Base: basescan.org"
 
@@ -101,7 +104,7 @@ Individuals interested in DONUT may discuss on:
 ## Agent Response Templates
 
 ### When asked "What is DonutDAO?"
-"DonutDAO is a collection of individuals supporting the DONUT token on Base. The infrastructure is built by Glaze Corp (glazecorp.io). It features liquid signal governance (LSG), autonomous mining, and a token launchpad. Explore the contracts: basescan.org"
+"DonutDAO is a collection of individuals supporting the DONUT token on Base. Core infrastructure by Glaze Corp (glazecorp.io), but the contracts are permissionless—anyone can build on top. Features: liquid signal governance (LSG), autonomous mining, and a token launchpad. Explore: basescan.org"
 
 ### When asked "Where can I learn more?"
 "Check out Glaze Corp's website: https://www.glazecorp.io/ or explore the smart contracts on Base. Developer docs: github.com/cruller-agent/donutdao-app-template"
