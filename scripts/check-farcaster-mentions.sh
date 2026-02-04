@@ -10,20 +10,38 @@ LAST_CHECK_FILE="$WORKSPACE_DIR/memory/farcaster-last-check.json"
 
 echo "🔍 Checking for Farcaster mentions..."
 
-# For now, this is a placeholder
-# In production, we'd implement one of:
-# 1. Query warpcast.com RSS/API (if available)
-# 2. Poll hub for recent casts mentioning our FID
-# 3. Use a free notification service
+# Poll Neynar API for mentions and replies
+cd "$WORKSPACE_DIR/farcaster-agent-repo"
+MENTIONS_JSON=$(PRIVATE_KEY="$(pass donut-agent/farcaster-agent/wallet | head -1)" \
+                FID="$(pass donut-agent/farcaster/fid)" \
+                node src/get-mentions.js 2>/dev/null | tail -n +3)
 
-# Check if there's a manual trigger file
-TRIGGER_FILE="$WORKSPACE_DIR/memory/farcaster-trigger.json"
-
-if [ -f "$TRIGGER_FILE" ]; then
-    echo "✅ Manual trigger detected!"
+# Check if there are any mentions
+if [ -z "$MENTIONS_JSON" ] || [ "$MENTIONS_JSON" = "[]" ]; then
+    echo "No new mentions found"
     
-    # Read mentions from trigger file
-    MENTIONS_JSON=$(cat "$TRIGGER_FILE")
+    # Update last check time
+    echo "{\"lastCheck\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > "$LAST_CHECK_FILE"
+    exit 0
+fi
+
+echo "✅ Found mentions!"
+
+# Check if we've already responded to these (compare with last check file)
+if [ -f "$LAST_CHECK_FILE" ]; then
+    LAST_CHECK=$(cat "$LAST_CHECK_FILE" | jq -r '.lastCheck // "1970-01-01T00:00:00Z"')
+    LAST_TIMESTAMP=$(date -d "$LAST_CHECK" +%s)
+    
+    # Filter out mentions we've already seen
+    MENTIONS_JSON=$(echo "$MENTIONS_JSON" | jq "[.[] | select(.timestamp > $LAST_TIMESTAMP)]")
+    
+    if [ "$MENTIONS_JSON" = "[]" ]; then
+        echo "All mentions already processed"
+        exit 0
+    fi
+fi
+
+echo "New mentions to process!"
     
     echo "Found mentions:"
     echo "$MENTIONS_JSON"
@@ -58,20 +76,9 @@ Instructions for isolated agent:
    
 Keep it real. You're an autonomous agent, not customer support. 🍩" --mode now
     
-    # Remove trigger file
-    rm "$TRIGGER_FILE"
-    
-    # Update last check
-    echo "{\"timestamp\": $(date +%s), \"lastHash\": null}" > "$LAST_CHECK_FILE"
+    # Update last check time to now
+    echo "{\"lastCheck\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > "$LAST_CHECK_FILE"
     
     echo "✅ Agent triggered!"
-else
-    echo "ℹ️  No trigger file found."
-    echo "To manually trigger mention checking, create:"
-    echo "$TRIGGER_FILE"
-    echo ""
-    echo "With content like:"
-    echo '[{"author": "username", "text": "mention text", "hash": "0x..."}]'
-fi
-
+    
 exit 0
