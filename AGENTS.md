@@ -371,16 +371,18 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 ## Model Selection & Agent Division of Labor
 
-**The Team (SIMPLIFIED):**
+**The Team:**
 - **Me (Sonnet)** - Communication, project management, coordination
-- **Kimi (vkimi)** - ALL coding (simple through complex)
+- **Qwen3 Coder** - Routine coding (fast, 90% of tasks)
+- **Kimi (vkimi)** - Complex architecture (when Qwen3 needs backup)
 
 See `CODING_WORKFLOW.md` for full details.
 
-**Critical rule:** I DON'T CODE. When you ask for ANY coding:
-- → I spawn Kimi (vkimi) sub-agent
+**Critical rule:** I DON'T CODE. When you ask for coding:
+- Simple/routine → I spawn Qwen3 Coder (opencode/qwen3-coder-480b-a35b-instruct)
+- Complex/novel → I spawn Kimi (venice/kimi-k2-5)
 - I coordinate and report results back
 
 **Exception:** Trivial one-liners (like `ls` or `git status`) I'll do directly.
 
-**Why we fired grok:** Unreliable, failed repeatedly on simple tasks, not worth the coordination overhead.
+**Performance proven:** Qwen3 = 40 seconds, Kimi = 30min+ timeout on same task.

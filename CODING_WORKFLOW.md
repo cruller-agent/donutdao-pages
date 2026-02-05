@@ -1,4 +1,4 @@
-# Coding Workflow - Two-Agent System
+# Coding Workflow - Three-Agent System
 
 ## The Team
 
@@ -12,22 +12,43 @@
 - ✅ Project management and coordination
 - ✅ Reading/research/strategy
 - ✅ Decision-making and task routing
-- ✅ Monitoring Kimi's work and reporting back
-- ❌ **NO CODING** (all coding goes to Kimi)
+- ✅ Monitoring sub-agents and reporting back
+- ❌ **NO CODING** (all coding goes to sub-agents)
 
-### 🧠 Kimi (vkimi) - All Development
-**Model:** venice/kimi-k2.5  
-**Role:** Solo developer for ALL code
+### ⚡ Qwen3 Coder - Routine Development
+**Model:** opencode/qwen3-coder-480b-a35b-instruct  
+**Role:** Fast execution for straightforward coding
 
 **Responsibilities:**
-- ✅ **ALL coding tasks** (simple through complex)
-- ✅ Scripts, automation, cron jobs
-- ✅ GitHub operations (commits, PRs, repos)
+- ✅ **Routine coding tasks** (scripts, fixes, straightforward features)
 - ✅ Bug fixes and debugging
-- ✅ Refactoring and optimization
-- ✅ System design and architecture
-- ✅ New features and integrations
-- ✅ File operations (when coding-related)
+- ✅ GitHub operations (commits, PRs, repos)
+- ✅ Cron jobs and automation
+- ✅ File operations and refactoring
+- ✅ Integration work with clear requirements
+- ✅ Testing and validation
+
+**Performance:**
+- FREE on Venice
+- 40 seconds to fix script + create cron (vs Kimi's 30min+ timeout)
+- Best for tasks with clear requirements
+
+### 🧠 Kimi - Complex Architecture
+**Model:** venice/kimi-k2.5  
+**Role:** Senior architect for hard problems
+
+**Responsibilities:**
+- ✅ **Complex system design** (novel architectures)
+- ✅ Strategic technical decisions
+- ✅ Multi-component integrations
+- ✅ Security-critical implementations
+- ✅ Performance optimization (deep analysis)
+- ✅ Research-heavy development
+
+**Performance:**
+- FREE on Venice
+- Slower but more thorough
+- Use when Qwen3 gets stuck or for genuinely complex work
 
 ---
 
@@ -37,8 +58,11 @@
 Task arrives
     ↓
 Is it code/development?
-    ↓ YES → Spawn Kimi (vkimi)
-    ↓ NO
+    ↓ YES
+    ↓
+Is it complex/novel/architectural?
+    ↓ YES → Spawn Kimi (strategy/design)
+    ↓ NO → Spawn Qwen3 Coder (fast execution)
     ↓
 Is it communication/coordination?
     ↓ YES → I handle it (Sonnet)
@@ -48,17 +72,21 @@ Is it communication/coordination?
 
 ## Why This Works
 
-**Grok Failed Repeatedly:**
-- Overthought simple tasks
-- Failed at repo management
-- Couldn't handle file operations reliably
-- Not worth the complexity
+**Qwen3 Coder Wins for Routine Work:**
+- 40 seconds vs 30+ min timeouts
+- Specialized for code generation
+- FREE on Venice
+- Handles 90% of day-to-day tasks
 
-**New System:**
-- **Sonnet (me)** = Talk, coordinate, manage
-- **Kimi** = Code everything
+**Kimi for Complex Problems:**
+- Still valuable for architecture
+- Better at novel system design
+- Use sparingly, only when needed
 
-Simple. Clean. Reliable.
+**Sonnet (Me) for Everything Else:**
+- Communication is my specialty
+- Coordinate the devs
+- Keep humans in the loop
 
 ---
 
@@ -66,43 +94,58 @@ Simple. Clean. Reliable.
 
 | Task | Agent | Why |
 |------|-------|-----|
-| Write tweet about feature | Sonnet | Communication |
-| Fix broken script | Kimi | Coding |
-| Design new architecture | Kimi | Coding |
-| Create GitHub repo | Kimi | Coding |
+| Write tweet | Sonnet | Communication |
+| Fix broken script | Qwen3 | Routine coding |
+| Design new architecture | Kimi | Complex/novel |
+| Create GitHub repo | Qwen3 | Routine coding |
 | Coordinate with team | Sonnet | Project management |
-| Debug cron job | Kimi | Coding |
+| Debug cron job | Qwen3 | Routine coding |
 | Write partnership proposal | Sonnet | Communication |
-| Refactor skill structure | Kimi | Coding |
+| Refactor skill structure | Qwen3 | Routine coding |
+| Design multi-agent system | Kimi | Complex architecture |
+| Set up new cron | Qwen3 | Routine coding |
 | Post to Farcaster | Sonnet | Communication |
-| Set up new cron | Kimi | Coding |
+| Implement novel protocol | Kimi | Complex/novel |
+
+---
+
+## Performance Data
+
+**Venice Cron Script Task:**
+- ❌ Kimi K2.5: 10min timeout → 30min timeout → FAILED
+- ✅ Qwen3 Coder: 40 seconds → SUCCESS
+
+**Lesson:** Use the right tool for the job. Don't overthink simple tasks.
 
 ---
 
 ## Communication Protocol
 
+### When I spawn Qwen3:
+> "⚡ Spawning Qwen3 Coder for: [task]"
+
 ### When I spawn Kimi:
-> "🧠 Spawning Kimi for: [task description]"
+> "🧠 Spawning Kimi for: [complex task]"
 
 ### When reporting back:
-> "✅ Kimi completed: [summary of what was done]"
+> "✅ [Agent] completed: [summary]"
 
-### If Kimi has issues:
-> "⚠️ Kimi hit a blocker: [issue] - investigating..."
+### If agent has issues:
+> "⚠️ [Agent] hit a blocker: [issue] - trying [solution]..."
 
 ---
 
 ## Budget Optimization
 
-**Cost per million tokens (estimated):**
-- Sonnet (me): ~$3
-- Kimi: ~$1-2
+**All models FREE on Venice:**
+- Sonnet (me): Communication specialist
+- Qwen3 Coder: Speed demon for routine work
+- Kimi: Thoughtful architect for hard problems
 
-**Benefits:**
-- Only two agents = simpler coordination
-- Kimi cheaper than my coding time
-- Me free to focus on comms/strategy
-- Faster turnaround (no grok failures)
+**Strategy:**
+- Default to Qwen3 for all coding
+- Escalate to Kimi only when Qwen3 struggles
+- Keep me free for comms and coordination
 
 ---
 
@@ -111,4 +154,5 @@ Simple. Clean. Reliable.
 - **Exception rule:** Trivial one-liners I can do instantly (like `ls` or `git status`)
 - **Sub-agents work in isolated sessions** (don't clutter our chat)
 - **They announce results back** when done
-- **If you want to specify model**, just say "use kimi" (but that's default now for code)
+- **Qwen3 is the new default coder** - proven fast and reliable
+- **Kimi is backup/specialist** - use for genuinely complex work
