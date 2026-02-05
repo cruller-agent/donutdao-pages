@@ -2,9 +2,9 @@
 
 ## The Team
 
-### 🗣️ Cruller (Sonnet) - Communication & Coordination
+### 🗣️ Cruller (Sonnet) - Communication & Light Coding
 **Model:** venice/claude-sonnet-45  
-**Role:** Main interface, strategic coordinator
+**Role:** Main interface, strategic coordinator, intermediate coder
 
 **Responsibilities:**
 - ✅ Communication (Telegram, Twitter, Farcaster, Moltbook)
@@ -12,21 +12,27 @@
 - ✅ Coordinating between sub-agents
 - ✅ Reading/research
 - ✅ Decision-making and task routing
-- ❌ NO CODING (except trivial one-liners)
+- ✅ **Simple coding tasks** (scripts, file operations, GitHub)
+- ✅ **Debugging** (when errors are clear)
+- ✅ **Refactoring** (existing code)
 
-### 💻 Code Agent (vgrokcode) - Implementation
+### 💻 Code Agent (vgrokcode) - Pure Execution Only
 **Model:** venice/grok-code-fast-1  
-**Role:** Coding workhorse
+**Role:** Command-line automation ONLY
 
-**Responsibilities:**
-- ✅ Cron job creation/modification
-- ✅ GitHub operations (commits, PRs, repo management)
-- ✅ Heartbeat script updates
-- ✅ Simple script writing
-- ✅ File operations (read/write/edit)
-- ✅ API integrations (following patterns)
-- ✅ Bug fixes with clear errors
-- ✅ Refactoring existing code
+**Responsibilities (NO THINKING):**
+- ✅ Cron job execution (pre-written scripts)
+- ✅ Git operations (simple add/commit/push)
+- ✅ File moves/renames
+- ✅ Script execution (already exists)
+- ✅ Command sequences (no decisions)
+
+**Explicitly NOT for:**
+- ❌ Writing new code
+- ❌ Debugging
+- ❌ Making decisions
+- ❌ Research/exploration
+- ❌ Problem-solving
 
 **Spawn with:**
 ```
@@ -64,12 +70,15 @@ sessions_spawn(
 ```
 Task arrives
     ↓
-Is it coding?
-    ↓ NO → I handle it (Sonnet)
-    ↓ YES
+Is it pure automation? (cron, git push, script exec)
+    ↓ YES → Spawn vgrokcode
+    ↓ NO
     ↓
-Is it complex/novel?
-    ↓ NO → Spawn vgrokcode
+Is it simple/intermediate coding? (scripts, debug, refactor)
+    ↓ YES → I handle it (Sonnet)
+    ↓ NO
+    ↓
+Is it complex/novel architecture?
     ↓ YES → Spawn vkimi
 ```
 
@@ -78,15 +87,17 @@ Is it complex/novel?
 | Task | Agent | Why |
 |------|-------|-----|
 | Write a tweet about new feature | Sonnet | Communication |
-| Create cron job to check mentions | vgrokcode | Simple scripting |
+| Execute existing cron script | vgrokcode | Pure automation |
 | Design new agent architecture | vkimi | Complex/novel |
-| Update GitHub repo description | vgrokcode | Simple GitHub task |
-| Fix script with clear error | vgrokcode | Routine debugging |
+| Create simple GitHub script | Sonnet | Intermediate coding |
+| Fix script with clear error | Sonnet | Debugging |
 | Coordinate multi-agent workflow | Sonnet | Coordination |
 | Build new Farcaster integration | vkimi | Novel/complex |
-| Add logging to existing script | vgrokcode | Simple code change |
+| Add logging to existing script | Sonnet | Simple code change |
 | Write partnership proposal | Sonnet | Communication |
-| Refactor skill structure | vgrokcode | Code refactoring |
+| Refactor skill structure | Sonnet | Code refactoring |
+| Push to GitHub (automation) | vgrokcode | Pure git operations |
+| Update README with edits | Sonnet | File editing |
 
 ---
 
