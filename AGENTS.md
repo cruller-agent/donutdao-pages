@@ -373,15 +373,15 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 I have access to two models:
 - **Sonnet (default)** - Cost-effective, highly capable, use for most tasks
-- **Opus (vopus)** - Most capable, expensive, use sparingly
+- **Kimi (vkimi)** - Advanced reasoning, budget-friendly, use for complex tasks
 
 See `MODEL_SELECTION.md` for the full decision framework.
 
-**Quick rule:** Use Sonnet by default. Switch to Opus for:
+**Quick rule:** Use Sonnet by default. Switch to Kimi for:
 - Strategic decisions
 - Novel complex problems
 - High-stakes/irreversible operations
 - Important public communications
 - When Sonnet fails 2+ times
 
-I'll state my reasoning when I need Opus, but you can always override with "use opus" or "sonnet is fine".
+I'll state my reasoning when I need Kimi, but you can always override with "use kimi" or "sonnet is fine".
