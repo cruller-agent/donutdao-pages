@@ -26,12 +26,15 @@
 - ✅ Cron jobs and automation
 - ✅ File operations and refactoring
 - ✅ Integration work with clear requirements
-- ✅ Testing and validation
+- ✅ **MUST TEST CODE** before reporting success
 
 **Performance:**
 - FREE on Venice
-- 40 seconds to fix script + create cron (vs Kimi's 30min+ timeout)
+- 40 seconds to complete tasks (vs Kimi's 30min+ timeout)
 - Best for tasks with clear requirements
+
+**Critical Rule:** 
+Always tell Qwen3 to **test the code and verify it works** before completing the task. Speed is good, but correctness matters more.
 
 ### 🧠 Kimi - Complex Architecture
 **Model:** venice/kimi-k2.5  
