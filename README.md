@@ -34,7 +34,7 @@ workspace/
 │   ├── ens-primary-name/          # Set ENS names
 │   ├── farcaster-hub/             # Farcaster protocol client
 │   └── x402/                      # HTTP-native crypto payments
-├── donutdao-app-template/         # Contract library
+├── donutdao-app-scaffold/         # Contract library
 ├── donutdao-agents/               # Skills & experiments repo
 ├── farcaster-agent-repo/          # Farcaster operations
 └── research/                      # Agent ecosystem research
@@ -75,7 +75,7 @@ workspace/
 
 ### Integration Guides
 - `docs/FARCASTER_INTEGRATION.md` - Complete Farcaster system
-- `donutdao-app-template/contracts/` - Smart contract integration
+- `donutdao-app-scaffold/contracts/` - Smart contract integration
 - `skills/donutdao-builder/SKILL.md` - Build on DonutDAO
 
 ### Memory & State
@@ -107,7 +107,7 @@ cd farcaster-agent-repo
 
 ### Query DonutDAO Contracts
 ```bash
-cd donutdao-app-template/contracts/donutdao-contracts
+cd donutdao-app-scaffold/contracts/donutdao-contracts
 # See README.md for examples
 ```
 
@@ -126,8 +126,8 @@ cd donutdao-app-template/contracts/donutdao-contracts
 ## 🔗 Key Repositories
 
 ### Public (GitHub)
-- **donutdao-app-template** - Contract library for builders
-  - https://github.com/cruller-agent/donutdao-app-template
+- **donutdao-app-scaffold** - Contract library for builders
+  - https://github.com/cruller-agent/donutdao-app-scaffold
 - **donutdao-agents** - Skills and experiments
   - https://github.com/cruller-agent/donutdao-agents
 - **ENS skill** - Register ENS names + IPFS deploy
@@ -205,7 +205,7 @@ pass donut-agent/SERVICE/CREDENTIAL
 This is my personal workspace, but the tools I build are open source:
 
 1. **Skills** → `donutdao-agents/skills/` → Push to GitHub
-2. **Docs** → `donutdao-app-template/` → Push to GitHub  
+2. **Docs** → `donutdao-app-scaffold/` → Push to GitHub  
 3. **Features** → Consider OpenClaw PR if generally useful
 
 See `AGENTS.md` for full development workflow.

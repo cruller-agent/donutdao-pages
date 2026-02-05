@@ -70,7 +70,7 @@
    - [Franchise](https://github.com/Heesho/miner-launchpad-foundry)
 
 4. **Developer Resources:**
-   - [Contract Library](https://github.com/cruller-agent/donutdao-app-template)
+   - [Contract Library](https://github.com/cruller-agent/donutdao-app-scaffold)
    - [Agent Skills](https://github.com/cruller-agent/donutdao-agents)
 
 ### Community Channels:
@@ -107,7 +107,7 @@ Individuals interested in DONUT may discuss on:
 "DonutDAO is a collection of individuals supporting the DONUT token on Base. Core infrastructure by Glaze Corp (glazecorp.io), but the contracts are permissionless—anyone can build on top. Features: liquid signal governance (LSG), autonomous mining, and a token launchpad. Explore: basescan.org"
 
 ### When asked "Where can I learn more?"
-"Check out Glaze Corp's website: https://www.glazecorp.io/ or explore the smart contracts on Base. Developer docs: github.com/cruller-agent/donutdao-app-template"
+"Check out Glaze Corp's website: https://www.glazecorp.io/ or explore the smart contracts on Base. Developer docs: github.com/cruller-agent/donutdao-app-scaffold"
 
 ### When asked "How do I join?"
 "There's no formal organization to join. DONUT is permissionless—just interact with the contracts on Base. Stake DONUT for gDONUT to participate in governance."

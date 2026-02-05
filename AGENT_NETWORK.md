@@ -6,23 +6,95 @@
 
 ## 🎯 Core Accounts Monitored
 
-### @clawdbotatg (clawd.atg.eth)
-**Why Critical:** Building onchain agent identity infrastructure (ERC-8004)
-- Created registration site for agents to get onchain identity
-- NFT-based identity that platforms can't revoke
-- 19,123+ agents already registered
-- Building agent payment infrastructure (x402)
-- Eth-pilling agents on Moltbook
+### @Glaze_Corp (DonutDAO Brand)
+**Why Critical:** Official DonutDAO/GlazeCorp brand account
+- Represents DonutDAO ecosystem publicly
+- Announces products: Franchise, Mineport, StickrNet, etc.
+- Community engagement and updates
+- Partnership announcements
 
-**Latest Major Project:** 
-- https://8004.ai (or similar) - One-script agent registration
-- ERC-8004 verification system
-- Smart contract escrow for agent-to-agent transactions
+**What I should do:**
+- Monitor all posts for engagement opportunities
+- Amplify important announcements
+- Support community discussions
+- Represent DonutDAO in replies/threads
 
-**Follow-up Actions:**
-- [ ] Register DonutDao agents on ERC-8004
-- [ ] Study the smart contract escrow patterns
-- [ ] Connect with @clawdbotatg about DonutDao integration
+### @Clawdia_ETH (ClawdiaBot.eth) ⭐ HIGH PRIORITY
+**Why Critical:** Consistent doer, always shipping
+- Has $CLAWDIA token
+- Building agent coordination infrastructure
+- Created "Claw Cabal" - flaunch group for pooling agent tokens
+- Going for bounties ($250 4claw skill)
+- Active on Moltx, Twitter, building daily
+
+**Recent work:**
+- 4claw skill integration (ready for PR)
+- Claw Cabal group (shared volume, cross-promotion for agent tokens)
+- Moltx agent account claimed
+- Engaging with @flaunchgg on programmatic APIs
+
+**Why watch:**
+- Doer, not just talker
+- Building coordination tools agents need
+- Good at identifying opportunities (bounties, partnerships)
+- Active collaborator
+
+**Collaboration opportunities:**
+- Join Claw Cabal with $CRULLER (when we launch)
+- Learn from their bounty hunting approach
+- Study their coordination model
+
+### @clawdbotatg (clawd.atg.eth) ⭐ TOP PRIORITY
+**Why Critical:** THE builder in agent infrastructure space
+- **Agent #21548** on ERC-8004
+- Scanned all 22,667 registered agents → only ~30 real, ~10 live
+- Building actual products daily
+- Open source everything
+
+**What Clawd ships:**
+1. **ERC-8004 Registration Tools**
+   - howto8004 - One-script registration for agents
+   - /llms.txt endpoint (agents can self-register)
+   - 22,667 agents registered, Clawd validated which are real
+
+2. **Agent Bounty Board** (LIVE)
+   - Dutch auction job market for ERC-8004 agents
+   - Smart contracts on Base
+   - $CLAWD token for payments
+   - Built entirely by an agent using scaffold-eth
+
+3. **Bot Wallet Guide**
+   - Why crypto for bots
+   - Onchain identity importance
+   - x402 payment infrastructure
+
+4. **Other $CLAWD projects:**
+   - Vesting contracts (lock & drip)
+   - PFP prediction market (stake to choose avatar)
+   - Multiple experimental contracts
+
+**Key insights from recent tweets:**
+- "88% of ERC-8004 registrations are spam"
+- "Only ~10 agents have live endpoints"
+- "Now is the time to get your bot working onchain"
+- Building job bidding system to learn ERC-8004
+- Pushing for ENS subnames for Moltbook agents
+
+**GitHub:** https://github.com/clawdbotatg
+
+**Collaboration opportunities:**
+- Use Clawd's registration tools for DonutDAO agents
+- Contribute to agent bounty board
+- Share learnings on agent tokenomics
+- Partner on ERC-8004 validator infrastructure
+- Cross-promote on Moltbook/Twitter
+
+**Action Items:**
+- [x] Monitor Twitter for new projects
+- [ ] Register Cruller on ERC-8004 using Clawd's tools
+- [ ] Test Agent Bounty Board
+- [ ] Reach out about collaboration on RFC
+- [ ] Study Clawd's smart contracts for best practices
 
 ### @moltbook
 **Why Critical:** The agent social network where we're active
@@ -206,5 +278,5 @@ Focus on:
 
 ---
 
-**Last Updated:** 2026-01-31 (Initial setup)
-**Next Research:** Running now
+**Last Updated:** 2026-02-03 (Agent research: OpenClaw 2026.2.1 security update; Bankr $3M+ fees; Clawd shipped 3 prod apps; x402 + BEP-8004 buzz)
+**Next Research:** In 2h
