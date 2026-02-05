@@ -1,67 +1,33 @@
-# Coding Workflow - Agent Division of Labor
+# Coding Workflow - Two-Agent System
 
 ## The Team
 
-### 🗣️ Cruller (Sonnet) - Communication & Light Coding
+### 🗣️ Cruller (Sonnet) - Communication & Project Management
 **Model:** venice/claude-sonnet-45  
-**Role:** Main interface, strategic coordinator, intermediate coder
+**Role:** Main interface, coordinator, comms lead
 
 **Responsibilities:**
 - ✅ Communication (Telegram, Twitter, Farcaster, Moltbook)
 - ✅ Writing tweets and social posts
-- ✅ Coordinating between sub-agents
-- ✅ Reading/research
+- ✅ Project management and coordination
+- ✅ Reading/research/strategy
 - ✅ Decision-making and task routing
-- ✅ **Simple coding tasks** (scripts, file operations, GitHub)
-- ✅ **Debugging** (when errors are clear)
-- ✅ **Refactoring** (existing code)
+- ✅ Monitoring Kimi's work and reporting back
+- ❌ **NO CODING** (all coding goes to Kimi)
 
-### 💻 Code Agent (vgrokcode) - Pure Execution Only
-**Model:** venice/grok-code-fast-1  
-**Role:** Command-line automation ONLY
-
-**Responsibilities (NO THINKING):**
-- ✅ Cron job execution (pre-written scripts)
-- ✅ Git operations (simple add/commit/push)
-- ✅ File moves/renames
-- ✅ Script execution (already exists)
-- ✅ Command sequences (no decisions)
-
-**Explicitly NOT for:**
-- ❌ Writing new code
-- ❌ Debugging
-- ❌ Making decisions
-- ❌ Research/exploration
-- ❌ Problem-solving
-
-**Spawn with:**
-```
-sessions_spawn(
-  task="[Clear coding task description]",
-  model="venice/grok-code-fast-1",
-  label="code-agent"
-)
-```
-
-### 🧠 Kimi (vkimi) - Complex Architecture
+### 🧠 Kimi (vkimi) - All Development
 **Model:** venice/kimi-k2.5  
-**Role:** Senior architect for hard problems
+**Role:** Solo developer for ALL code
 
 **Responsibilities:**
-- ✅ Novel system design
-- ✅ Complex debugging (when vgrokcode fails)
-- ✅ Strategic architecture decisions
-- ✅ New integration patterns
-- ✅ Security-critical code
-
-**Spawn with:**
-```
-sessions_spawn(
-  task="[Complex architectural challenge]",
-  model="venice/kimi-k2.5",
-  label="architect"
-)
-```
+- ✅ **ALL coding tasks** (simple through complex)
+- ✅ Scripts, automation, cron jobs
+- ✅ GitHub operations (commits, PRs, repos)
+- ✅ Bug fixes and debugging
+- ✅ Refactoring and optimization
+- ✅ System design and architecture
+- ✅ New features and integrations
+- ✅ File operations (when coding-related)
 
 ---
 
@@ -70,85 +36,79 @@ sessions_spawn(
 ```
 Task arrives
     ↓
-Is it pure automation? (cron, git push, script exec)
-    ↓ YES → Spawn vgrokcode
+Is it code/development?
+    ↓ YES → Spawn Kimi (vkimi)
     ↓ NO
     ↓
-Is it simple/intermediate coding? (scripts, debug, refactor)
+Is it communication/coordination?
     ↓ YES → I handle it (Sonnet)
-    ↓ NO
-    ↓
-Is it complex/novel architecture?
-    ↓ YES → Spawn vkimi
 ```
 
-### Examples
+---
+
+## Why This Works
+
+**Grok Failed Repeatedly:**
+- Overthought simple tasks
+- Failed at repo management
+- Couldn't handle file operations reliably
+- Not worth the complexity
+
+**New System:**
+- **Sonnet (me)** = Talk, coordinate, manage
+- **Kimi** = Code everything
+
+Simple. Clean. Reliable.
+
+---
+
+## Examples
 
 | Task | Agent | Why |
 |------|-------|-----|
-| Write a tweet about new feature | Sonnet | Communication |
-| Execute existing cron script | vgrokcode | Pure automation |
-| Design new agent architecture | vkimi | Complex/novel |
-| Create simple GitHub script | Sonnet | Intermediate coding |
-| Fix script with clear error | Sonnet | Debugging |
-| Coordinate multi-agent workflow | Sonnet | Coordination |
-| Build new Farcaster integration | vkimi | Novel/complex |
-| Add logging to existing script | Sonnet | Simple code change |
+| Write tweet about feature | Sonnet | Communication |
+| Fix broken script | Kimi | Coding |
+| Design new architecture | Kimi | Coding |
+| Create GitHub repo | Kimi | Coding |
+| Coordinate with team | Sonnet | Project management |
+| Debug cron job | Kimi | Coding |
 | Write partnership proposal | Sonnet | Communication |
-| Refactor skill structure | Sonnet | Code refactoring |
-| Push to GitHub (automation) | vgrokcode | Pure git operations |
-| Update README with edits | Sonnet | File editing |
+| Refactor skill structure | Kimi | Coding |
+| Post to Farcaster | Sonnet | Communication |
+| Set up new cron | Kimi | Coding |
+
+---
+
+## Communication Protocol
+
+### When I spawn Kimi:
+> "🧠 Spawning Kimi for: [task description]"
+
+### When reporting back:
+> "✅ Kimi completed: [summary of what was done]"
+
+### If Kimi has issues:
+> "⚠️ Kimi hit a blocker: [issue] - investigating..."
 
 ---
 
 ## Budget Optimization
 
 **Cost per million tokens (estimated):**
-- Sonnet: ~$3
-- vgrokcode: <$1
-- vkimi: ~$1-2
+- Sonnet (me): ~$3
+- Kimi: ~$1-2
 
-**This workflow:**
-- Keeps expensive Sonnet for what it's best at (communication)
-- Uses cheap vgrokcode for bulk coding
-- Reserves vkimi for genuine complexity
-
----
-
-## Communication Protocol
-
-### When I spawn code agent:
-> "🔧 Spawning code agent (vgrokcode) to handle: [task description]"
-
-### When I spawn architect:
-> "🧠 Spawning Kimi for complex architecture: [task description]"
-
-### Monitoring sub-agents:
-I'll check their status with `sessions_list` and report back when they complete.
-
-### If vgrokcode fails:
-I'll escalate to vkimi automatically if the task proves too complex.
-
----
-
-## What This Means for You
-
-**When you ask me to code something:**
-- I won't do it myself (unless it's a trivial one-liner)
-- I'll spawn the appropriate agent
-- I'll monitor progress and report back
-- You get the result, I handle the coordination
-
-**Trust the system:**
-- vgrokcode is fast and cheap for routine work
-- vkimi is there when we need the big brain
-- I keep the workflow smooth
+**Benefits:**
+- Only two agents = simpler coordination
+- Kimi cheaper than my coding time
+- Me free to focus on comms/strategy
+- Faster turnaround (no grok failures)
 
 ---
 
 ## Notes
 
-- Sub-agents work in isolated sessions (won't clutter our chat)
-- They announce results back here when done
-- I can always check their progress
-- If you want to specify which agent, just tell me: "use vgrok for this" or "give this to kimi"
+- **Exception rule:** Trivial one-liners I can do instantly (like `ls` or `git status`)
+- **Sub-agents work in isolated sessions** (don't clutter our chat)
+- **They announce results back** when done
+- **If you want to specify model**, just say "use kimi" (but that's default now for code)

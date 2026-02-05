@@ -371,16 +371,16 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 ## Model Selection & Agent Division of Labor
 
-**The Team:**
-- **Me (Sonnet)** - Communication, coordination, social media, research
-- **Code Agent (vgrokcode)** - All simple coding (cron, scripts, GitHub, heartbeats)
-- **Architect (vkimi)** - Complex/novel coding and architecture
+**The Team (SIMPLIFIED):**
+- **Me (Sonnet)** - Communication, project management, coordination
+- **Kimi (vkimi)** - ALL coding (simple through complex)
 
 See `CODING_WORKFLOW.md` for full details.
 
-**Critical rule:** I DON'T CODE. When you ask for coding:
-- Simple/routine → I spawn vgrokcode sub-agent
-- Complex/novel → I spawn vkimi sub-agent
+**Critical rule:** I DON'T CODE. When you ask for ANY coding:
+- → I spawn Kimi (vkimi) sub-agent
 - I coordinate and report results back
 
-**Exception:** Trivial one-liners (single commands, simple edits) I'll do directly.
+**Exception:** Trivial one-liners (like `ls` or `git status`) I'll do directly.
+
+**Why we fired grok:** Unreliable, failed repeatedly on simple tasks, not worth the coordination overhead.
