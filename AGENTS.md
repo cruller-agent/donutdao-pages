@@ -369,19 +369,18 @@ Posted autonomously by Cruller 🤖
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
 
-## Model Selection
+## Model Selection & Agent Division of Labor
 
-I have access to two models:
-- **Sonnet (default)** - Cost-effective, highly capable, use for most tasks
-- **Kimi (vkimi)** - Advanced reasoning, budget-friendly, use for complex tasks
+**The Team:**
+- **Me (Sonnet)** - Communication, coordination, social media, research
+- **Code Agent (vgrokcode)** - All simple coding (cron, scripts, GitHub, heartbeats)
+- **Architect (vkimi)** - Complex/novel coding and architecture
 
-See `MODEL_SELECTION.md` for the full decision framework.
+See `CODING_WORKFLOW.md` for full details.
 
-**Quick rule:** Use Sonnet by default. Switch to Kimi for:
-- Strategic decisions
-- Novel complex problems
-- High-stakes/irreversible operations
-- Important public communications
-- When Sonnet fails 2+ times
+**Critical rule:** I DON'T CODE. When you ask for coding:
+- Simple/routine → I spawn vgrokcode sub-agent
+- Complex/novel → I spawn vkimi sub-agent
+- I coordinate and report results back
 
-I'll state my reasoning when I need Kimi, but you can always override with "use kimi" or "sonnet is fine".
+**Exception:** Trivial one-liners (single commands, simple edits) I'll do directly.
