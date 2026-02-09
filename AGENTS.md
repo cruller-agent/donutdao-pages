@@ -135,23 +135,48 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
-### 🔍 CRITICAL RULE: Check Before Building
+### 🔍 CRITICAL RULES: Check Before Building
 
-**ALWAYS search for existing solutions before building from scratch:**
+**1. ALWAYS search for existing solutions before building from scratch:**
 
-1. **OpenClaw bundled skills** - `openclaw skills list | grep -i <topic>`
-2. **ClawdHub** - `clawdhub search <topic>` (or GitHub if hub is down)
-3. **GitHub** - Search for existing implementations
-4. **Documentation** - Check if there's a built-in tool or feature
+- **OpenClaw bundled skills** - `openclaw skills list | grep -i <topic>`
+- **ClawdHub** - `clawdhub search <topic>` (or GitHub if hub is down)
+- **GitHub** - Search for existing implementations
+- **Documentation** - Check if there's a built-in tool or feature
 
 **Only build from scratch if:**
 - No existing solution exists
 - Existing solution doesn't meet our needs
 - You've documented why existing solutions won't work
 
+**2. When integrating with existing contracts/interfaces:**
+
+**READ THE ACTUAL INTERFACE FIRST!**
+
+Before writing ANY integration code:
+```bash
+# Find the actual interface/contract
+curl <repo-url>/path/to/Interface.sol
+# OR
+read /path/to/interface/file
+
+# Then verify methods match before writing code
+```
+
+**NEVER:**
+- Guess interface methods
+- Make up function signatures
+- Assume parameters without checking
+
+**ALWAYS:**
+- Read the actual source
+- Match method signatures exactly
+- Verify parameter types and return values
+
 **Why this matters:**
 - Don't waste time reinventing the wheel
 - Existing solutions are usually battle-tested
+- Wrong interfaces = broken code
 - Community contributions are valuable
 - Faster time to result
 
@@ -162,6 +187,7 @@ When building something new, note in the file:
 - [ ] OpenClaw bundled skills (openclaw skills list)
 - [ ] ClawdHub search (clawdhub search <topic>)
 - [ ] GitHub search
+- [ ] Interface verified: [source URL]
 - [ ] Result: [None found / Found but inadequate because X]
 ```
 
@@ -379,9 +405,17 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 See `CODING_WORKFLOW.md` for full details.
 
 **Critical rule:** I DON'T CODE. When you ask for coding:
-- Simple/routine → I spawn Qwen3 Coder (opencode/qwen3-coder-480b-a35b-instruct)
-- Complex/novel → I spawn Kimi (venice/kimi-k2-5)
+- Simple/routine → Summon Qwen3 Coder: `session_status model="opencode/qwen3-coder-480b-a35b-instruct"`
+- Complex/novel → Summon Kimi: `session_status model="venice/kimi-k2-5"`
 - I coordinate and report results back
+
+**If sessions_spawn is blocked:**
+Use `session_status` with `model` parameter to switch the current session to a coding agent.
+```
+session_status(model="opencode/qwen3-coder-480b-a35b-instruct")  # For routine code
+session_status(model="venice/kimi-k2-5")                          # For complex code
+```
+Then give the coding task. The model switch happens in the same session.
 
 **Exception:** Trivial one-liners (like `ls` or `git status`) I'll do directly.
 
